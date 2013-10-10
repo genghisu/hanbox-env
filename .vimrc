@@ -68,3 +68,6 @@ Bundle 'repmo.vim'
 Bundle 'git://git.wincent.com/command-t.git'
 Bundle 'scrooloose/nerdtree'
 Bundle 'vim-ruby/vim-ruby'
+Bundle 'vim-scripts/mru.vim'
+
+map L :NERDTreeToggle<cr>
