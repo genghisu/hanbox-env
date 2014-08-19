@@ -1,8 +1,8 @@
 set nocompatible               " be iMproved
 filetype off                   " required!
 set number
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 set cmdheight=2
 set laststatus=2
 set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
@@ -40,34 +40,28 @@ nmap <silent> <c-l> :wincmd l<CR>
 " required! 
 
 filetype plugin indent on     " required!
-"
-" Brief help
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install(update) bundles
-" :BundleSearch(!) foo - search(or refresh cache first) for foo
-" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
-"
-" see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle command are not allowed..
 
 function! HasPaste()
- if &paste
-     return 'PASTE MODE '
- en
- return ''
+  if &paste
+    return 'PASTE MODE '
+  en
+  return ''
 endfunction
 
-Bundle 'gmarik/vundle'
-Bundle 'tpope/vim-fugitive'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-Bundle 'tpope/vim-rails.git'
-Bundle 'L9'
-Bundle 'FuzzyFinder'
-Bundle 'repmo.vim'
-Bundle 'git://git.wincent.com/command-t.git'
-Bundle 'scrooloose/nerdtree'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'vim-scripts/mru.vim'
+Plugin 'gmarik/Vundle.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plugin 'tpope/vim-rails.git'
+Plugin 'L9'
+Plugin 'FuzzyFinder'
+Plugin 'repmo.vim'
+Plugin 'git://git.wincent.com/command-t.git'
+Plugin 'scrooloose/nerdtree'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'vim-scripts/mru.vim'
+
+call vundle#end()
+filetype plugin indent on
 
 map L :NERDTreeToggle<cr>
